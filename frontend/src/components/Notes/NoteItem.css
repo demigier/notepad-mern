@@ -1,0 +1,7 @@
+.note-card:hover {
+    border: 1px solid #333;
+}
+
+.note-card{
+    height: 300px;
+}

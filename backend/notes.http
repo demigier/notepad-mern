@@ -1,0 +1,32 @@
+
+@api = http://localhost:4000
+
+### getNotes
+GET {{api}}/notes    
+
+### getNote
+GET {{api}}/notes/6032702787b1251638fb3f1a
+
+### createNote
+POST {{api}}/notes
+Content-Type: application/json
+
+{
+    "title": "Prueba",
+    "description": "prueba de sociales"
+}
+
+### deleteNote
+DELETE {{api}}/notes/603277edb3d47125409f2ec8
+
+### updateNote
+PUT {{api}}/notes/6038124ad351fc2b3ca5dfef
+Content-Type: application/json
+
+{
+    "title": "Prueba",
+    "description": "Prueba de naturales"
+}
+
+### searchNotes
+GET {{api}}/notes/search?t=culo
