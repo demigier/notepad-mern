@@ -15,13 +15,11 @@ interface Props{
 const generateDate = (note: Note)=>{
     console.log(note.createdAt)
     const newDate = note.createdAt ? new Date(note.createdAt): new Date() 
-    //const transformedDate = newDate.getDay;
     return newDate.toLocaleDateString();
 }
 
 
 export const NoteItem = ({note, loadNotes}: Props) => {
-    
     const history = useHistory();
 
     const handleDelete = async (id: string) =>{
@@ -32,7 +30,7 @@ export const NoteItem = ({note, loadNotes}: Props) => {
     }
 
     const undo = ()=>{
-        return <div>⚠ Note deleted successfully <a onClick={handleUndo}> 🔙 </a></div> 
+        return <div>⚠ Note deleted successfully | <a onClick={handleUndo}> UNDO </a></div> 
     }
 
     const handleUndo = ()=>{
