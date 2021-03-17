@@ -11,7 +11,7 @@ const app = express();
 app.set('port', config.PORT);
 
 
-//SETS USE OF MORGAN AND CORS
+//SETS USE OF MORGAN AND CORS     
 app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());   //IT GIVES THE ABILITY TO UNDERSTAND JSON
