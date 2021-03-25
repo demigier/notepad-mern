@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { Note } from './Note';
 
-const API = 'http://192.168.0.133:4000' || 'http://localhost:4000';
+const API = /*'http://192.168.0.133:4000' || */ 'http://localhost:4000';
 
 export const getNotes = async () =>{
     return await axios.get<Note[]>(`${API}/notes`);

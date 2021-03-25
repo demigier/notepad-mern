@@ -21,7 +21,7 @@ export const Navbar = () => {
                         <Link to="/" className='text-white' style={{ textDecoration: 'none', marginRight: "20px" }}>
                             <FontAwesomeIcon icon="list" /> My List
                         </Link>
-                        <Link to="/new-video" className='text-white' style={{ textDecoration: 'none', marginRight: "20px" }}>
+                        <Link to="/new-note" className='text-white' style={{ textDecoration: 'none', marginRight: "20px" }}>
                             <FontAwesomeIcon icon="plus-square" /> Add Note
                         </Link>
                     </ReactBootStrap.Nav>

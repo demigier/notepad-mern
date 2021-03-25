@@ -66,7 +66,11 @@ export const NoteForm = () => {
     const getNote = async(id: string) => {
         const res = await noteService.getNote(id);
         const { title, description } = res.data;
-        setNote({title, description})
+        if(title == undefined){
+            history.push('/error');
+        }else{
+            setNote({title, description});
+        }
     }   
 
     useEffect (() => {

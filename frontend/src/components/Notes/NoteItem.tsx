@@ -13,7 +13,6 @@ interface Props{
 }
 
 const generateDate = (note: Note)=>{
-    console.log(note.createdAt)
     const newDate = note.createdAt ? new Date(note.createdAt): new Date() 
     return newDate.toLocaleDateString();
 }

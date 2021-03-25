@@ -9,6 +9,7 @@ import { NoteList } from './components/Notes/NoteList';
 import { NoteForm } from './components/Notes/NoteForm';
 import { Navbar } from './components/Navbar/Navbar';
 import { Footer } from './components/Footer/Footer';
+import { ErrorPage } from './components/ErrorPage/ErrorPage';
 
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -30,8 +31,10 @@ ReactDOM.render(
       <div className="container p-4">
         <Switch>
           <Route exact path="/" component={NoteList} />
-          <Route path="/new-video" component={NoteForm} />
+          <Route exact path="/error" component={ErrorPage} />
+          <Route path="/new-note" component={NoteForm} />
           <Route path="/update/:id" component={NoteForm} />
+          <Route component={ErrorPage} />
         </Switch>
         <ToastContainer />
       </div>
