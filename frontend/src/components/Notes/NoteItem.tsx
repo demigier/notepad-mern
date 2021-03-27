@@ -5,6 +5,8 @@ import {useHistory} from 'react-router-dom'
 import * as NoteService from './NoteService'
 import { toast } from 'react-toastify';
 
+import {CopyToClipboard} from 'react-copy-to-clipboard'
+
 import './NoteItem.css'
 
 interface Props{
@@ -22,7 +24,6 @@ export const NoteItem = ({note, loadNotes}: Props) => {
     const history = useHistory();
 
     const handleDelete = async (id: string) =>{
-        
         await NoteService.deleteNote(id);
         loadNotes();
         toast.warning(undo, {autoClose: 2000});
@@ -50,8 +51,16 @@ export const NoteItem = ({note, loadNotes}: Props) => {
                     <span className="text-danger" onClick={() => note._id && handleDelete(note._id)} > X </span>
                 </div>
                 <p onClick={() => history.push(`/update/${note._id}`)}> {note.description} </p>
-                <div className="d-flex justify-content-end" onClick={() => history.push(`/update/${note._id}`)}>
-                    <p> {generateDate(note)} </p>
+                <div style={{marginTop: 'auto'}}>
+
+                    <CopyToClipboard text={`${note.title}
+${note.description}`} onCopy={()=> toast.info('🗊 Note copied to clipboard', {autoClose: 1200})}>
+                        <span className="text-danger d-flex justify-content-end"> COPY </span>
+                    </CopyToClipboard>
+
+                    <div className="d-flex justify-content-end" onClick={() => history.push(`/update/${note._id}`)}>
+                        <p> {generateDate(note)} </p>
+                    </div>
                 </div>
             </div>
         </div>
