@@ -4,6 +4,7 @@ import { Note } from './Note'
 import * as noteService from './NoteService'
 import { toast } from 'react-toastify';
 import { Form, Field } from "react-final-form";
+import * as anim from 'react-awesome-reveal'
 
 type InputChange = ChangeEvent<HTMLInputElement | HTMLTextAreaElement>;
 
@@ -86,7 +87,8 @@ export const NoteForm = () => {
     }
 
     return (
-        <div className="row">
+        
+        <anim.JackInTheBox className="row">
             <div className="col-md-4 offset-md-4">
                 <div className="card">
                     <div className="card-header bg-dark text-white text-center">
@@ -115,6 +117,6 @@ export const NoteForm = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </anim.JackInTheBox>
     )
 }

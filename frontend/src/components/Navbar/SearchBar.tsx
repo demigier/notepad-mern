@@ -17,6 +17,10 @@ export const SearchBar = () => {
     const [notes, setNotes] = useState<Note[]>([]);
 
     useEffect(() => {
+        setInterval(async () => {
+            getOptions();
+          }, 10000);
+
         getOptions();
     }, [])
 
